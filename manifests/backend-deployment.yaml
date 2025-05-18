@@ -23,9 +23,9 @@ spec:
             - name: PORT
               value: "5000"
       initContainers:
-        - name: wait-for-mongo
-          image: busybox
-          command: ['sh', '-c', 'until nc -z mongo-0.mongo 27017; do echo waiting for mongo; sleep 2; done;']
+      - name: wait-for-mongo
+        image: busybox
+        command: ['sh', '-c', 'until nc -z mongo-0.mongo 27017; do echo waiting for mongo; sleep 2; done;']
 
 ---
 apiVersion: v1
@@ -39,4 +39,5 @@ spec:
     - protocol: TCP
       port: 5000
       targetPort: 5000
-  type: ClusterIP
+      nodePort: 30001
+  type: NodePort
