@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: yolo-frontend
-          image: denisemwangi/yolo-client:v1.0.1
+          image: denisemwangi/yolo-client:v1.0.4
           ports:
             - containerPort: 3000
           env:
             - name: REACT_APP_BACKEND_URL
-              value: http://34.59.94.150:30001
+              value: http://backend-service:5000
 ---
 apiVersion: v1
 kind: Service
