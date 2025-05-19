@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: yolo-frontend
-          image: denisemwangi/yolo-client:v1.0.1
+          image: denisemwangi/yolo-client:v1.0.0
           ports:
             - containerPort: 3000
           env:
